@@ -1,39 +1,45 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import {cuisines} from './shared/constants/cuisines'
+import { getData } from './shared/api/spoonacular'
 
 function App() {
 
   const API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
 
   const [data, setData] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const getData = async () => {
-    try {
-      const resp = await fetch('https://api.spoonacular.com/recipes/complexSearch?cuisine=Latin American', 
-        {
-    headers: {'x-api-key': API_KEY}
-        } )
-    
-      const json = await resp.json();
-      setData(json);
-    
-    } catch (error) {
-      console.log("broken lol")
-    }
+
+  function handleSearchTermChange(e){
+    setSearchTerm(e.target.value);
   }
 
-  
-  useEffect(() => {
-    getData();
-  }, [])
+  async function searchCuisine(){
+    setData(await getData(searchTerm, API_KEY))
+  }
 
   return (
     <>
       <h1>Hello, World!</h1>
 
       <p>{API_KEY}</p>
+
+      <ul> List of supported cuisines
+        {cuisines.map((cuisine) => 
+          <li key={cuisine}>{cuisine}</li>
+        )}
+      </ul>
+
+      {!data && <p>Loading...</p>}
+
+      <p>searchdata: {searchTerm}</p>
+
+        <label>Cuisine: </label>
+        <input type='text' name='cuisine' value={searchTerm} onChange={handleSearchTermChange}/>
+        <input type='submit' onClick={searchCuisine}/>
+
 
 
       {data?.results?.map(recipe => (
