@@ -2,6 +2,7 @@ import { useState } from "react";
 import { cuisines } from "../../shared/constants/cuisines";
 import { diets } from "../../shared/constants/diets";
 import { getCuisine, getDiet, getQuery } from "../../shared/api/spoonacular";
+import RecipeCard from "../../components/RecipeCard";
 
 
 function SearchBar() {
@@ -110,14 +111,9 @@ function SearchBar() {
         
 
 
-
-
-        {data?.results?.map(recipe => (
-            <div key={recipe.id}>
-                <h3>{recipe.title}</h3>
-                <img src={recipe.image} alt={recipe.title} />
-            </div>
-        ))}
+        {data?.results?.map(recipe =>
+            <RecipeCard key={recipe.id} recipe={recipe} />
+        )}
 
     </>)
 
