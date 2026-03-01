@@ -2,8 +2,7 @@ import { useState } from "react";
 import { cuisines } from "../../shared/constants/cuisines";
 import { diets } from "../../shared/constants/diets";
 import { getCuisine, getDiet, getQuery } from "../../shared/api/spoonacular";
-import RecipeCard from "../../components/RecipeCard";
-
+import RecipeCard from "../../components/RecipeCard/RecipeCard";
 
 function SearchBar() {
 
@@ -109,11 +108,10 @@ function SearchBar() {
         {dietForm && diet != "Unselected" ? <button onClick={searchAPI}>Search Diet</button> : false}
         {queryForm && query != "Unselected" ? <button onClick={searchAPI}>Search Query</button> : false}
         
+        <br />
 
+        {data && <RecipeCard data={data?.results}/> || <p>No Recipe Data to display</p>}
 
-        {data?.results?.map(recipe =>
-            <RecipeCard key={recipe.id} recipe={recipe} />
-        )}
 
     </>)
 
