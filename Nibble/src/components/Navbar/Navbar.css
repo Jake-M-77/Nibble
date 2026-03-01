@@ -1,0 +1,16 @@
+
+
+.Navbar{
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+
+
+    li{
+        list-style: none;
+        display: inline-block;
+        margin-right: 5em;
+        font-size: 1.2em;
+
+    }
+}

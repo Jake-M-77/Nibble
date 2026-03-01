@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import SearchBar from './features/search/SearchBar'
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
 
   return (
     <>
-      <h1>Hello, World!</h1>
+
+      <Navbar />
 
       <p>{API_KEY}</p>
 
