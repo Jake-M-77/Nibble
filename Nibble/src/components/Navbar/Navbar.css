@@ -11,6 +11,12 @@
         display: inline-block;
         margin-right: 5em;
         font-size: 1.2em;
-
+        
+       .nav-link{
+        text-decoration: none;
+        color: black;
+       }
     }
+
 }
+

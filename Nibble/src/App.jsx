@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import SearchBar from './features/search/SearchBar'
 import Navbar from './components/Navbar/Navbar';
+import { Outlet } from 'react-router-dom';
+
 
 function App() {
 
@@ -12,10 +14,10 @@ function App() {
     <>
 
       <Navbar />
+      <Outlet />
 
-      <p>{API_KEY}</p>
 
-      <SearchBar />
+      
       
 
     </>
