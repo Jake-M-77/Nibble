@@ -1,4 +1,3 @@
-import './RecipeCard.css'
 
 function RecipeCard({data}) {
 

@@ -9,7 +9,18 @@ import Query from './pages/Query.jsx';
 import Info from './pages/Info.jsx';
 import ApiInfo from './pages/ApiInfo.jsx';
 import Account from './pages/Account.jsx';
-
+import './styles/index.css'
+import './styles/reset.css'
+import './styles/App.css'
+import './styles/layout.css'
+import './styles/components/RecipeCard.css'
+import './styles/components/Navbar.css'
+import './styles/components/Home.css'
+import './styles/components/Cuisine.css'
+import './styles/components/Query.css'
+import './styles/components/Diet.css'
+import './styles/components/Info.css'
+import './styles/components/apiInfo.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

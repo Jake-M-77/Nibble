@@ -1,0 +1,14 @@
+@layer components {
+
+    .info{
+
+
+        h1 {
+            text-align: center;
+            padding-top: 4rem;
+        }
+
+
+    }
+
+}

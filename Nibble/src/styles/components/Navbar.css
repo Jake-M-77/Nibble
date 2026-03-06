@@ -1,16 +1,18 @@
 
+@layer components {
 
-.Navbar{
+    .Navbar{
     display: flex;
     justify-content: center;
     background-color: grey;
+    border-radius: 10%;
 
 
     li{
         list-style: none;
         display: inline-block;
         margin-right: 5em;
-        font-size: 1.2em;
+        font-size: 1.4em;
         
        .nav-link{
         text-decoration: none;
@@ -19,4 +21,9 @@
     }
 
 }
+
+
+}
+
+
 

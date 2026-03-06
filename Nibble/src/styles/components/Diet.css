@@ -1,0 +1,13 @@
+@layer components {
+
+    .diet {
+
+
+
+        h1 {
+            text-align: center;
+            padding-top: 4rem;
+        }
+
+    }
+}

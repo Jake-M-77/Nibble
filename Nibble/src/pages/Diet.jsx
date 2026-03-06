@@ -1,7 +1,20 @@
+import SearchBar from "../features/search/SearchBar"
 
 
 function Diet(){
-    return (<></>)
+    return (<>
+    
+    <div className="diet">
+
+
+        <h1>Diet</h1>
+
+        <SearchBar />
+
+    </div>
+    
+    
+    </>)
 }
 
 export default Diet
