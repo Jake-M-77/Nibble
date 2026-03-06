@@ -1,0 +1,42 @@
+@layer components{
+
+    .recipe-detail{
+
+        h1{
+            text-align: center;
+        }
+
+        img{
+            margin: auto;
+            border-radius: 20%;
+        }
+
+        .Ingredients-Instructions{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            
+        }
+
+        .Ingredients{
+            border: 2px solid black;
+            border-radius: 5%;
+            margin-right: 5%;
+
+            h2{
+                text-align: center;
+            }
+        }
+
+        .Instructions{
+            border: 2px solid black;
+            border-radius: 5%;
+
+            h2{
+                text-align: center;
+            }
+        }
+
+    }
+
+
+}

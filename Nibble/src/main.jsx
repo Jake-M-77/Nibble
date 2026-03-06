@@ -9,6 +9,8 @@ import Query from './pages/Query.jsx';
 import Info from './pages/Info.jsx';
 import ApiInfo from './pages/ApiInfo.jsx';
 import Account from './pages/Account.jsx';
+import RecipeDetail from './pages/RecipeDetail.jsx';
+
 import './styles/index.css'
 import './styles/reset.css'
 import './styles/App.css'
@@ -21,6 +23,8 @@ import './styles/components/Query.css'
 import './styles/components/Diet.css'
 import './styles/components/Info.css'
 import './styles/components/apiInfo.css'
+import './styles/components/RecipeDetail.css'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -36,6 +40,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/Info' element={<Info />} />
           <Route path='/ApiInfo' element={<ApiInfo />} />
           <Route path='/Account' element={<Account />} />
+          <Route path='/recipe/:id' element={<RecipeDetail />} />
         </Route>
 
       </Routes>

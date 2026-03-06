@@ -12,7 +12,7 @@ export async function getCuisine(searchTerm, API_KEY){
     }
     catch(error)
     {
-      return error;
+      console.error(error);
     }
 }
 
@@ -30,7 +30,7 @@ export async function getDiet(searchTerm, API_KEY){
     }
     catch(error)
     {
-      return error;
+      console.error(error);
     }
 }
 
@@ -48,6 +48,21 @@ export async function getQuery(searchTerm, API_KEY){
     }
     catch(error)
     {
-      return error;
+      console.error(error);
     }
+}
+
+export async function getRecipeInformation(id, API_KEY){
+  try {
+    const resp = await fetch(`https://api.spoonacular.com/recipes/${id}/information`,
+      { headers: {'x-api-key': API_KEY}
+    } )
+
+    const json = await resp.json();
+    console.log(json);
+    return json;
+
+  } catch (error) {
+    console.error(error);
+  }
 }
