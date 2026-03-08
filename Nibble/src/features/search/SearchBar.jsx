@@ -15,18 +15,34 @@ function SearchBar({ mode }) {
     const [diet, setDiet] = useState('Unselected');
     const [query, setQuery] = useState('');
 
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+
 
     async function searchAPI() {
 
-        if(mode === "cuisine" && cuisine !== 'Unselected'){
+        setLoading(true);
+        setError(null);
+
+        try {
+
+            if(mode === "cuisine" && cuisine !== 'Unselected'){
             setData(await getCuisine(cuisine, API_KEY))
+            }
+            else if(mode === "diet" && diet !== "Unselected"){
+                setData(await getDiet(diet, API_KEY))
+            }
+            else if(mode === "query" && query.trim() !== ""){
+                setData(await getQuery(query, API_KEY))
+            }
+
+        } catch (err) {
+            setError("Something went wrong while fetching recipes.")
         }
-        else if(mode === "diet" && diet !== "Unselected"){
-            setData(await getDiet(diet, API_KEY))
-        }
-        else if(mode === "query" && query.trim() !== ""){
-            setData(await getQuery(query, API_KEY))
-        }
+
+        setLoading(false);
+
+        
 
     }
 
@@ -67,11 +83,21 @@ function SearchBar({ mode }) {
 
         <br />
 
-        <button onClick={searchAPI}>Search {mode}</button>
+        <button onClick={searchAPI} disabled={loading}>Search {mode}</button>
         
         <br />
 
-        {data && <RecipeCard data={data?.results}/> || <p>No Recipe Data to display</p>}
+        {loading && <p>Loading Recipes...</p>}
+
+        {error && <p>{error}</p>}
+
+        {!loading && !error && data && (
+            <RecipeCard data={data?.results}/>
+        )}
+
+        {!loading && !error && !data && (
+            <p>No Recipe Data to display</p>
+        )}
 
 
     </>)
