@@ -91,11 +91,11 @@ function SearchBar({ mode }) {
 
         {error && <p>{error}</p>}
 
-        {!loading && !error && data && (
+        {!loading && !error && data?.results?.length > 0 && (
             <RecipeCard data={data?.results}/>
         )}
 
-        {!loading && !error && !data && (
+        {!loading && !error && data?.results?.length === 0 && (
             <p>No Recipe Data to display</p>
         )}
 
