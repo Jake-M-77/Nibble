@@ -8,7 +8,7 @@ function Query(){
 
         <h1>Query</h1>
 
-        <SearchBar />
+        <SearchBar mode='query'/>
 
     </div>
     

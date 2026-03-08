@@ -9,7 +9,7 @@ function Diet(){
 
         <h1>Diet</h1>
 
-        <SearchBar />
+        <SearchBar mode='diet'/>
 
     </div>
     

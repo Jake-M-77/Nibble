@@ -10,7 +10,7 @@ function Cuisine(){
         <h1>Cuisine</h1>
 
 
-        <SearchBar />
+        <SearchBar mode='cuisine'/>
 
     </div>
     
