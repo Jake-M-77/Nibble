@@ -13,6 +13,7 @@
             transform: scale(1.05);
             transition: transform 0.5s ease;
             margin: 1em;
+            cursor: pointer;
         }
         
     }
@@ -24,7 +25,7 @@
 
         h3{
             text-align: center;
-            padding: .5em;
+            padding: 1em;
         }
 
         img{
@@ -36,6 +37,15 @@
         }
 
         
+    }
+
+
+    .navigation-buttons{
+        display: flex;
+
+        padding-top: 1em;
+        font-size: 1.5em;
+        gap: 25%;
     }
 
 }

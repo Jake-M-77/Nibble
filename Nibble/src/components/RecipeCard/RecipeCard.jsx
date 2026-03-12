@@ -21,6 +21,10 @@ function RecipeCard({data}) {
         )}
     </div>
 
+    {/* <div className="navigation-buttons">
+        <button>Previous</button>
+        <button>Next</button>
+    </div> */}
         
     </>)
 
