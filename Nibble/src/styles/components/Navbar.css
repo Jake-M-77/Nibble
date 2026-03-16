@@ -1,33 +1,40 @@
-
 @layer components {
 
-    .Navbar{
-    display: flex;
-    justify-content: center;
-    background-color: grey;
-    border-radius: 10%;
+    .Navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: grey;
+        border-radius: 10%;
 
+        li {
+            list-style: none;
+            margin: auto;
+            font-size: 1.2em;
 
-    li{
-        list-style: none;
-        display: inline-block;
-        margin-right: 5em;
-        font-size: 1.4em;
-        
-       .nav-link{
-        text-decoration: none;
-        color: black;
+            .nav-link {
+                text-decoration: none;
+                color: black;
 
-        &.active{
-            font-weight: bold;
+                &.active {
+                    font-weight: bold;
+                }
+            }
         }
-       }
+    }
+
+    @media (min-width: 576px) {
+
+        .Navbar {
+            flex-direction: row;
+            justify-content: center;
+
+            li {
+                display: inline-block;
+                font-size: 1.4em;
+            }
+        }
+
     }
 
 }
-
-
-}
-
-
-

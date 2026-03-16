@@ -24,6 +24,7 @@ import './styles/components/Diet.css'
 import './styles/components/Info.css'
 import './styles/components/apiInfo.css'
 import './styles/components/RecipeDetail.css'
+import './styles/components/searchBar.css'
 
 
 createRoot(document.getElementById('root')).render(

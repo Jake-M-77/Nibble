@@ -85,41 +85,44 @@ function SearchBar({ mode }) {
 
         <br />
 
-        {mode === "cuisine" &&
-            <label>Cuisine Search:
-                <select name="selectedCuisine" defaultValue="Unselected" onChange={e => setCuisine(e.target.value)}>
-                    <option value="Unselected">Unselected</option>
-                    {cuisines.map(cuisine =>
-                        <option key={cuisine} value={cuisine}>{cuisine}</option>
-                    )}
-                </select>
-            </label>
-        }
+        <div className="searchBar">
 
-        {mode === "diet" &&
-            <label>Diet Search:
-                <select name="selectedDiet" defaultValue="Unselected" onChange={e => setDiet(e.target.value)}>
-                    <option value="Unselected">Unselected</option>
-                    {diets.map(diet =>
-                        <option key={diet} value={diet}>{diet}</option>
-                    )}
-                </select>
-            </label>
-        }
+            {mode === "cuisine" &&
+                <label>Cuisine Search:
+                    <select name="selectedCuisine" defaultValue="Unselected" onChange={e => setCuisine(e.target.value)}>
+                        <option value="Unselected">Unselected</option>
+                        {cuisines.map(cuisine =>
+                            <option key={cuisine} value={cuisine}>{cuisine}</option>
+                        )}
+                    </select>
+                </label>
+            }
 
-        {mode === "query" &&
-            <label>Query Search:
-                <input onChange={e => setQuery(e.target.value)}
-                    onKeyDown={e => {
-                        if (e.key === "Enter")
-                            searchAPI()
-                    }} />
-            </label>
-        }
+            {mode === "diet" &&
+                <label>Diet Search:
+                    <select name="selectedDiet" defaultValue="Unselected" onChange={e => setDiet(e.target.value)}>
+                        <option value="Unselected">Unselected</option>
+                        {diets.map(diet =>
+                            <option key={diet} value={diet}>{diet}</option>
+                        )}
+                    </select>
+                </label>
+            }
 
-        <br />
+            {mode === "query" &&
+                <label>Query Search:
+                    <input onChange={e => setQuery(e.target.value)}
+                        onKeyDown={e => {
+                            if (e.key === "Enter")
+                                searchAPI()
+                        }} />
+                </label>
+            }
 
-        <button onClick={searchAPI} disabled={loading}>Search {mode}</button>
+
+            <button onClick={searchAPI} disabled={loading}>Search {mode}</button>
+
+        </div>
 
         <br />
 
